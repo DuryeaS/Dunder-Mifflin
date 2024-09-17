@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Scott's Tots</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #0078D7;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            font-size: 1em;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #0078D7;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scranton Pa Regional Manger Login</h1>
+        <form onsubmit="return validateLogin()">
+            <input type="text" id="username" placeholder="Username"><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <p>Security Question: Who was your favorite boss?</p>
+            <input type="text" id="security-answer" placeholder="Answer"><br>
+            <button type="submit" class="button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const securityAnswer = document.getElementById('security-answer').value;
+
+            // Valid login credentials
+            const validUsername = "michalescott@dundermifflin.com";
+            const validPassword = "1234M&J!";
+            const correctSecurityAnswer = "Ed Truck";  
+            // Check if credentials are valid
+            if (username === validUsername && password === validPassword && securityAnswer === correctSecurityAnswer) {
+                // Proceed to secret page
+                window.location.href = "succesfull_login.html";
+                return false;  // Prevents form from submitting
+            } else {
+                alert('Incorrect username, password, or security answer.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
