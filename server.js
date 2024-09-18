@@ -15,7 +15,7 @@ app.post('/login', (req, res) => {
     }
 });
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/login-app/login.html');
+    res.sendFile(__dirname + '/login-app/index.html');
 });
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:4000');
